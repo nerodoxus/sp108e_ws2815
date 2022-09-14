@@ -9,7 +9,7 @@ from homeassistant.components.light import (
     ATTR_COLOR_TEMP,
     ATTR_EFFECT,
     ATTR_HS_COLOR,
-    ATTR_WHITE_VALUE,
+    ATTR_WHITE,
     EFFECT_COLORLOOP,
     EFFECT_RANDOM,
     PLATFORM_SCHEMA,
@@ -261,9 +261,9 @@ class WifiLedShopLight(LightEntity):
   def brightness(self):
     return self._state.brightness
 
-  @property
-  def white_value(self):
-    return self._state.white
+  # @property
+  # def white_value(self):
+  #  return self._state.white
 
   @property
   def is_on(self):
@@ -287,4 +287,5 @@ class WifiLedShopLight(LightEntity):
 
   @property
   def supported_features(self):
-    return (SUPPORT_COLOR | SUPPORT_BRIGHTNESS | SUPPORT_WHITE_VALUE | SUPPORT_EFFECT)
+    # return (SUPPORT_COLOR | SUPPORT_BRIGHTNESS | SUPPORT_WHITE_VALUE | SUPPORT_EFFECT)
+    return (SUPPORT_COLOR | SUPPORT_BRIGHTNESS | SUPPORT_EFFECT)
